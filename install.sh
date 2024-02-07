@@ -6,14 +6,14 @@ azul="\e[34m"
 roxo="\e[38;2;128;0;128m"
 reset="\e[0m"
 
-rm -rf /root/UlekCheckUser/
+rm -rf /root/StartNet/
 rm -f /usr/local/bin/ulekCheckuser
 pkill -9 -f "/root/StartNetCheckUser/checkuser.py"
 
 apt update && apt upgrade -y && apt install python3 git -y
 git clone https://github.com/Stalkermtx/StartNetCheckUser.git
 chmod +x /root/StartNetCheckUser/checkuserMenu.sh
-ln -s /root/StartNetCheckUser/checkuserMenu.sh /usr/local/bin/StartNetCheckuser
+ln -s /root/StartNet/checkuserMenu.sh /usr/local/bin/StartNetCheckuser
 
 clear
-echo -e "Para iniciar o menu digite: ${verde}StartNetCheckuser${reset}"
+echo -e "Para Iniciar o Menu Digite: ${verde}StartNet${reset}"
