@@ -29,7 +29,7 @@ def obter_do_cache(chave):
 
 def carregar_cache():
     try:
-        with open('/root/StartNetCheckUser/cache.json', 'r') as arquivo:
+        with open('/root/StartNet/cache.json', 'r') as arquivo:
             return json.load(arquivo)
     except (FileNotFoundError, json.JSONDecodeError):
         return {} 
@@ -51,10 +51,10 @@ def get_public_ip():
                 print("Endereço IP público não encontrado na resposta.")
                 return None
         else:
-            print("Falha na solicitação ao servidor.")
+            print("Falha na Solicitação ao servidor.")
             return None
     except Exception as e:
-        print("Não foi possível obter o endereço IP público:", str(e))
+        print("Não Foi Possível Obter o Endereço IP Público:", str(e))
         return None
 
 
@@ -68,11 +68,11 @@ def verificar_processo(nome_processo):
             if nome_processo in linha and "python" in linha:
                 return True
     except subprocess.CalledProcessError as e:
-        print(f"Erro ao verificar o processo: {e}")
+        print(f"Erro ao Verificar o Processo: {e}")
     return False
 
 
-nome_do_script = "/root/StartNetCheckUser/checkuser.py"
+nome_do_script = "/root/StartNet/checkuser.py"
 
 
 
@@ -91,39 +91,39 @@ if __name__ == "__main__":
 
         print(f"")
 
-        print(f"Selecione uma opção:")
-        print(f" 1 - Iniciar checkuser")
-        print(f" 2 - Parar checkuser")
-        print(f" 3 - Verificar links")
+        print(f"Selecione Uma Opção:")
+        print(f" 1 - Iniciar Checkuser")
+        print(f" 2 - Parar Checkuser")
+        print(f" 3 - Verificar Links")
         print(f" 4 - Sobre")
-        print(f" 0 - Sair do menu")
+        print(f" 0 - Sair do Menu")
 
-        option = input("Digite a opção: ")
+        option = input("Digite a Opção: ")
 
         if option == "1":
 
-            print(f"Observação: Para funcionar com security apenas se usar a porta 5454 !")
+            print(f"Observação: Para Funcionar Com Security Apenas Se Usar a Porta 5454 !")
             
-            adicionar_ao_cache('porta', input("\nDigite a porta que deseja usar !"))
+            adicionar_ao_cache('porta', input("\nDigite a Porta Que Deseja Usar !"))
 
             os.system('clear')
-            print(f'Porta escolhida: {obter_do_cache("porta")}')
+            print(f'Porta Escolhida: {obter_do_cache("porta")}')
 
             os.system(f'nohup python3 {nome_do_script} --port {obter_do_cache("porta")} & ')
 
-            input(f"\nPressione a tecla enter para voltar ao menu\n\n")
+            input(f"\nPressione a Tecla Enter Para Voltar ao Menu\n\n")
         elif option == "2":
             if verificar_processo(nome_do_script):
 
                 try:
-                    subprocess.run(f'pkill -9 -f "/root/UlekCheckUser/checkuser.py"', shell=True)
+                    subprocess.run(f'pkill -9 -f "/root/StartNet/checkuser.py"', shell=True)
 
                         
                 except subprocess.CalledProcessError:
-                    print("Erro ao executar o comando.")
+                    print("Erro ao Executar o Comando.")
                 remover_do_cache("porta")
             else: 
-                print("O Checkuser não está ativo.")
+                print("O Checkuser Não Está Ativo.")
             
 
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         elif option == "3":
             os.system('clear')
             if verificar_processo(nome_do_script):
-                print("Abaixo os apps, e os links para cada um: ")
+                print("Abaixo os Apps, e os Links Para Cada Um: ")
                 print("")
                 ip = get_public_ip()
                 porta = obter_do_cache("porta")
@@ -152,24 +152,24 @@ if __name__ == "__main__":
                 print("")
 
             else:
-                print("\nInicie o serviço primeiro\n")
-            input(f"Pressione a tecla enter para voltar ao menu")
+                print("\nInicie o Serviço Primeiro\n")
+            input(f"Pressione a Tecla Enter Para Voltar ao Menu")
                   
 
         elif option == "4":
             os.system('clear')
-            print(f"Olá, esse é um multi-checkuser criado por @UlekBR")
-            print(f"Com esse checkuser venho trazendo a possibilidade de usar em diversos apps")
-            print(f"Apps como: ")
+            print(f"Olá, esse é um multi-checkuser Editado por @StartNetOfc")
+            print(f"Com esse Checkuser Venho Trazendo a Possibilidade de Usar em Diversos Apps")
+            print(f"Apps Como: ")
             print(f" - DtunnelMod")
             print(f" - GlTunnelMod")
             print(f" - AnyVpnMod")
             print(f" - Conecta4g")
             print(f"")
-            input(f"Pressione a tecla enter para voltar ao menu")
+            input(f"Pressione a Tecla Enter Para Voltar ao Menu")
         elif option == "0":
             sys.exit(0)
         else:
             os.system('clear')
-            print(f"Selecionado uma opção invalida, tente novamente !")
-            input(f"Pressione a tecla enter para voltar ao menu")
+            print(f"Selecionado Uma Opção Invalida, Tente Novamente !")
+            input(f"Pressione a Tecla Enter Para Voltar ao Menu")
