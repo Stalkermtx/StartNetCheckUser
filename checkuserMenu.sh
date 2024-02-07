@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 /root/StartNetCheckUser/checkuserMenu.py
+python3 /root/StartNet/checkuserMenu.py
