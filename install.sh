@@ -8,12 +8,12 @@ reset="\e[0m"
 
 rm -rf /root/UlekCheckUser/
 rm -f /usr/local/bin/ulekCheckuser
-pkill -9 -f "/root/UlekCheckUser/checkuser.py"
+pkill -9 -f "/root/StartNetCheckUser/checkuser.py"
 
 apt update && apt upgrade -y && apt install python3 git -y
-git clone https://github.com/UlekBR/UlekCheckUser.git
-chmod +x /root/UlekCheckUser/checkuserMenu.sh
-ln -s /root/UlekCheckUser/checkuserMenu.sh /usr/local/bin/ulekCheckuser
+git clone https://github.com/Stalkermtx/StartNetCheckUser.git
+chmod +x /root/StartNetCheckUser/checkuserMenu.sh
+ln -s /root/StartNetCheckUser/checkuserMenu.sh /usr/local/bin/StartNetCheckuser
 
 clear
-echo -e "Para iniciar o menu digite: ${verde}ulekCheckuser${reset}"
+echo -e "Para iniciar o menu digite: ${verde}StartNetCheckuser${reset}"
