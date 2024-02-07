@@ -1,9 +1,9 @@
-Um simples check de usuario feito em python que funciona com varios aplicativos, mas seja compreensivo, script em testes ! 
+Um Simples CheckUser de Usuario Feito em Python Que Funciona Com Varios Aplicativos, Mas Seja Compreensivo, Script em Testes ! 
 
-para fazer a instalação rode o seguinte comando !
+Para Fazer a Instalação Rode o Seguinte Comando !
 
-```bash <(wget -qO- https://raw.githubusercontent.com/UlekBR/UlekCheckUser/main/install.sh)```
+```bash <(wget -qO- https://raw.githubusercontent.com/Stalkermtx/StartNetCheckUser/main/install.sh```
 
-Feito por @UlekBR
+Editado Por por @StartNetOfc
 
-Para iniciar o checkuser menu: ```ulekCheckuser```
+Para iniciar o checkuser menu: ```StartNet```
